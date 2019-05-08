@@ -1,1 +1,1 @@
-# text2waseda
+# text2shorthand
