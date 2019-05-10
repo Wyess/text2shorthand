@@ -8,3 +8,4 @@ from ..waseda.u import CharU, CharUku, CharUn, CharKun, CharUki, CharUtsu
 from ..waseda.e import CharE
 from ..waseda.o import CharO
 from ..waseda.ka import CharKa
+from ..waseda.ki import CharKi
