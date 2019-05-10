@@ -6,3 +6,4 @@ from ..waseda.i import CharI, CharIku, CharItsu
 from ..waseda.i import CharI, CharIku, CharItsu
 from ..waseda.u import CharU, CharUku, CharUn, CharKun, CharUki, CharUtsu
 from ..waseda.e import CharE
+from ..waseda.o import CharO
