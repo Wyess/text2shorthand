@@ -9,4 +9,4 @@ if __name__ == '__main__':
     parser.add_argument('output', help='Output file (.svg|.eps|.pdf)')
     parser.add_argument('shorthand', help='Shorthand method (nakane|sangiin|shugiin|waseda')
     args = parser.parse_args()
-    app.run() 
+    app.run(shorthand=args.shorthand, in_txt=args.input, out=args.output)
