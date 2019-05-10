@@ -2,16 +2,22 @@
 
 import re
 import MeCab
+import janome.tokenizer
 import yaml
 
 def parse(in_txt='in.txt', raw=False, dic_merge_split_yaml=''): 
     with open(in_txt, 'r') as f:
-        s = f.read()
+        text = f.read()
 
-    m = MeCab.Tagger()
-    s = m.parse(s)
+    s = '表層形,品詞,品詞細分類1,品詞細分類2,品詞細分類3,活用型,活用形,原形,読み,発音,符号クラス\n'
+    #m = MeCab.Tagger()
+    #s += m.parse(text)
+    t = janome.tokenizer.Tokenizer()
+    
+    for token in t.tokenize(text):
+        s += f"{token}\n"
+
     s = re.sub('\t', ',', s)
-    s = '表層形,品詞,品詞細分類1,品詞細分類2,品詞細分類3,活用型,活用形,原形,読み,発音,符号クラス\n' + s
 
     if raw:
         return s
