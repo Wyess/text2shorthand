@@ -10,3 +10,4 @@ from ..waseda.o import CharO
 from ..waseda.ka import CharKa
 from ..waseda.ki import CharKi
 from ..waseda.ku import CharKu
+from ..waseda.ke import CharKe
