@@ -13,3 +13,4 @@ from ..waseda.ku import CharKu
 from ..waseda.ke import CharKe
 from ..waseda.ko import CharKo
 from ..waseda.sa import CharSa
+from ..waseda.shi import CharShi
