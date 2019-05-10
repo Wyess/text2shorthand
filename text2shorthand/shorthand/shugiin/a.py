@@ -33,9 +33,9 @@ class CharA(ShugiinChar):
         #c1 = z1 + P(-0.842402, -0.825606)
 
         z0 = P(0, -0)
-        c0 = z0 + PP(0.842355, -55)
+        c0 = z0 + PP(0.842355, -55-20)
         z1 = z0 + PP(3.00403, 0)
-        c1 = z1 + PP(1.17952, -135)
+        c1 = z1 + PP(1.17952, -135+20)
 
         return pyx.metapost.path.path([
             beginknot(*z0),
