@@ -21,3 +21,4 @@ from ..waseda.ta import CharTa
 from ..waseda.chi import CharChi
 from ..waseda.tsu import CharTsu
 from ..waseda.te import CharTe
+from ..waseda.to import CharTo
