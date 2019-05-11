@@ -4,3 +4,5 @@ from ..shugiin.a import CharA
 from ..shugiin.ka import CharKa
 from ..shugiin.sa import CharSa
 from ..shugiin.ta import CharTa
+from ..shugiin.na import CharNa
+from ..shugiin.ha import CharHa
