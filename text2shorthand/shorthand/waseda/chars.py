@@ -25,3 +25,4 @@ from ..waseda.to import CharTo
 from ..waseda.na import CharNa
 from ..waseda.ni import CharNi
 from ..waseda.nu import CharNu
+from ..waseda.ne import CharNe
