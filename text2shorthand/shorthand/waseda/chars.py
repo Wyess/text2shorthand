@@ -18,3 +18,5 @@ from ..waseda.su import CharSu
 from ..waseda.se import CharSe
 from ..waseda.so import CharSo
 from ..waseda.ta import CharTa
+from ..waseda.chi import CharChi
+from ..waseda.tsu import CharTsu
