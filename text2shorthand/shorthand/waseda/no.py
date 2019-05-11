@@ -4,6 +4,7 @@ from pyx.metapost.path import beginknot, endknot, smoothknot, tensioncurve, path
 class CharNo(WasedaChar):
     def __init__(self, name='no', kana='の', model='EL16', head_type='EL', tail_type='EL'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.tail_ligature = {'SEL', 'XNE', 'ER', 'SW', 'SWL', 'E', 'SE', 'NEL', 'SWR', 'NE'}
         
     @classmethod
     def path_template(cls, ta=90, tn=2.5):
