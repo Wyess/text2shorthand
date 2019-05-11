@@ -23,3 +23,4 @@ from ..waseda.tsu import CharTsu
 from ..waseda.te import CharTe
 from ..waseda.to import CharTo
 from ..waseda.na import CharNa
+from ..waseda.ni import CharNi
