@@ -27,16 +27,26 @@ class CharTo(WasedaChar):
             self.head_type = 'SW'
             self.tail_type = 'SW'
             self.model = 'SW16'
+            self.tail_ligature = {'SW'}
         else:
             self.head_type = 'NE'
             self.tail_type = 'NE'
             self.model = 'NE16'
+            self.tail_ligature = {'NE', 'ER'}
 
         return super(WasedaChar, self).get_paths()
 
     @classmethod
     def path_NE(cls, ta=None, **kwargs):
         return pyx.path.line(0, 0, *PP(16, 40))
+
+    @classmethod
+    def path_NEne(cls, ta=None, **kwargs):
+        return cls.jog(cls.path_NE())
+
+    @classmethod
+    def path_NEer(cls, ta=None, **kwargs):
+        return cls.jog(cls.path_NE())
 
     @classmethod
     def path_NENE(cls, ta=None, **kwargs):
@@ -78,6 +88,10 @@ class CharTo(WasedaChar):
     @classmethod
     def path_SW(cls, ta=-115, **kwargs):
         return pyx.path.line(0, 0, *PP(16, -115))
+    
+    @classmethod
+    def path_SWsw(cls, ta=-115, **kwargs):
+        return cls.jog(cls.path_SW()) 
 
     @classmethod
     def path_SWNE(cls, ta=None, **kwargs):
