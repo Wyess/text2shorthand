@@ -192,7 +192,7 @@ class Char():
             self.after.head = self.tail
 
     @classmethod
-    def jog(cls, paths, length=0.5):
+    def jog(cls, paths, length=0.5, deg=10):
         if not isinstance(paths, list):
             paths = [paths]
 
@@ -205,7 +205,7 @@ class Char():
         tan = end - begin
 
         d = degrees(atan2(*[coord / unit.length(1) for coord in tan][::-1]))
-        dp = trafo.rotate(d - 10 if d <= -90 else d + 10).apply(-length, 0)
+        dp = trafo.rotate(d - deg if d <= -90 else d + deg).apply(-length, 0)
         paths[-1].append(path.rlineto(*dp))
 
         return paths
