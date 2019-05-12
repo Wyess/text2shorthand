@@ -15,6 +15,7 @@ class CharKa(ShugiinChar):
     def __init__(self, name='ka', kana='か',
                  model='E9', head_type='E', tail_type='E'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.tail_ligature = {'E'}
     
     @classmethod
     def path_E(cls, ta=None, **kwargs):
