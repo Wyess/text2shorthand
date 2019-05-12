@@ -33,7 +33,8 @@ class CharKa(ShugiinChar):
 
     @classmethod
     def path_Ee(cls, ta=None, **kwargs):
-        pass
+        return ShugiinChar.jog(cls.path_E())
+        #return cls.path_E()
 
     @classmethod
     def path_Eer(cls, ta=None, **kwargs):
