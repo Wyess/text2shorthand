@@ -13,7 +13,7 @@ from pyx.metapost.path import (
 
 class CharSa(ShugiinChar):
     def __init__(self, name='sa', kana='さ',
-                 model='SR7', head_type='SR', tail_type='SR'):
+                 model='SR9', head_type='SR', tail_type='SR'):
         super().__init__(name, kana, model, head_type, tail_type)
 
     @classmethod
