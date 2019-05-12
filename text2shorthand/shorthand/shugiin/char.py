@@ -1,4 +1,5 @@
 import re
+import math
 import pyx
 from text2shorthand.common.point import Point as P, PPoint as PP
 from text2shorthand.common.char import Char
@@ -16,3 +17,7 @@ class ShugiinChar(Char):
 
     def get_paths_extra(self, **kwargs):
         return []
+
+    @classmethod
+    def jog(cls, paths, length=0.5, deg=90):
+        return Char.jog(paths, length=length, deg=deg)
