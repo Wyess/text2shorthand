@@ -13,8 +13,9 @@ from pyx.metapost.path import (
 
 class CharWa(ShugiinChar):
     def __init__(self, name='wa', kana='わ',
-                 model='UWL3', head_type='SWR', tail_type='NEL'):
+                 model='UWL3', head_type='SWL', tail_type='NEL'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.head_ligature = {'E', 'EL', 'SEL'}
 
     @classmethod
     def path_UWL(cls, ta=None, **kwargs):
@@ -95,3 +96,244 @@ class CharWa(ShugiinChar):
     @classmethod
     def path_UWLswl(cls, ta=None, **kwargs):
         pass
+
+
+    @classmethod
+    def path_eUWL(cls, ta=None, **kwargs):
+        #M 377.45,173.055 C 374.94127,173.055 372.49656,174.32588 372.49656,178.11188 372.54756,181.01388 376.56456,182.10388 378.33056,181.08488
+
+        z0 = P(0, -0)
+        c0 = P(-0.885024, -0)
+        c1 = P(-1.74746, -0.448338)
+        z1 = P(-1.74746, -1.78395)
+        c2 = P(-1.72947, -2.80772)
+        c3 = P(-0.312364, -3.19224)
+        z2 = P(0.310642, -2.83276)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
+
+    @classmethod
+    def path_eUWLe(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLer(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLne(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLner(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLnel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLs(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLsl(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLsr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLse(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLser(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLsel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLsw(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLswr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_eUWLswl(cls, ta=None, **kwargs):
+        pass
+
+
+    @classmethod
+    def path_elUWL(cls, ta=None, **kwargs):
+        #M 379.57125,79.080276 C 376.87521,81.066608 373.83181,83.185161 375.08771,85.166596 375.91791,86.476394 377.80173,86.700437 380.38857,85.44541
+
+        z0 = P(0, -0)
+        c0 = P(-0.951103, -0.700734)
+        c1 = P(-2.02475, -1.44811)
+        z1 = P(-1.58169, -2.14712)
+        c2 = P(-1.28882, -2.60919)
+        c3 = P(-0.624247, -2.68822)
+        z2 = P(0.288332, -2.24548)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
+
+    @classmethod
+    def path_elUWLe(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLer(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLne(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLner(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLnel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLs(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLsl(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLsr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLse(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLser(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLsel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLsw(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLswr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_elUWLswl(cls, ta=None, **kwargs):
+        pass
+
+
+    @classmethod
+    def path_selUWL(cls, ta=None, **kwargs):
+        #M 191.539,474.785 C 189.60791,474.785 186.49552,475.77273 186.49552,479.55873 186.54552,482.46073 190.56352,483.55073 192.32952,482.53073
+
+        z0 = P(0, -0)
+        c0 = P(-0.681246, -0)
+        c1 = P(-1.77923, -0.348449)
+        z1 = P(-1.77923, -1.68407)
+        c2 = P(-1.76159, -2.70783)
+        c3 = P(-0.344128, -3.09235)
+        z2 = P(0.278878, -2.73252)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
+
+    @classmethod
+    def path_selUWLe(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLer(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLne(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLner(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLnel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLs(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLsl(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLsr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLse(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLser(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLsel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLsw(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLswr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_selUWLswl(cls, ta=None, **kwargs):
+        pass
+
