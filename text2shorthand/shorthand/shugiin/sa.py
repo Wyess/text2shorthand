@@ -15,7 +15,7 @@ class CharSa(ShugiinChar):
     def __init__(self, name='sa', kana='さ',
                  model='SR9', head_type='SR', tail_type='SR'):
         super().__init__(name, kana, model, head_type, tail_type)
-        self.tail_ligature -= {'E', 'S', 'EL', 'SEL', 'NER', 'SWL'}
+        self.tail_ligature -= {'E', 'S', 'EL', 'SEL', 'SWL'}
 
     @classmethod
     def path_SR(cls, ta=None, **kwargs):
@@ -49,7 +49,28 @@ class CharSa(ShugiinChar):
 
     @classmethod
     def path_SRner(cls, ta=None, **kwargs):
-        pass
+        #M 97.4345,267.449 C 102.22,270.44 102.1519,286.13094 97.4812,291.924
+
+        #z0 = P(0, -0)
+        #c0 = P(1.68822, -1.05516)
+        #c1 = P(1.66419, -6.59057)
+        #z1 = P(0.0164747, -8.63424)
+
+        #z0 = P(0, -0)
+        #c0 = z0 + P(1.68822, -1.05516)
+        #z1 = z0 + P(0.0164747, -8.63424)
+        #c1 = z1 + P(1.64772, 2.04366)
+
+        z0 = P(0, -0)
+        c0 = z0 + PP(1.99084, -32)
+        z1 = z0 + PP(8.63425, -89)
+        #c1 = z1 + PP(2.62517, 51)
+        c1 = z1 + PP(2.62517, ta)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_SRnel(cls, ta=None, **kwargs):
