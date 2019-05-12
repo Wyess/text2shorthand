@@ -15,6 +15,7 @@ class CharTa(ShugiinChar):
     def __init__(self, name='ta', kana='た',
                  model='S9', head_type='S', tail_type='S'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.tail_ligature = {'S', 'SEL'}
 
     @classmethod
     def path_S(cls, ta=None, **kwargs):
