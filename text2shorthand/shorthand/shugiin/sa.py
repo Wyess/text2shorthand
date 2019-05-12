@@ -18,16 +18,15 @@ class CharSa(ShugiinChar):
 
     @classmethod
     def path_SR(cls, ta=None, **kwargs):
-        #M317.5253 75.954841C321.17872 78.961985 322.40594 96.302645 316.8737 100.50908
+        #M 317.143,76.022512 C 321.92827,79.013084 323.5357,96.258183 316.28953,100.44144
         z0 = P(0, -0)
-        c0 = P(1.28885, -1.06085)
-        c1 = P(1.72178, -7.17825)
-        z1 = P(-0.22987, -8.66219)
+        c0 = P(1.68814, -1.05501)
+        c1 = P(2.2552, -7.1387)
+        z1 = P(-0.301085, -8.61446)
 
         return pyx.metapost.path.path([
             beginknot(*z0),
             controlcurve(c0, c1),
-            #curve(),
             endknot(*z1)])
 
     @classmethod
