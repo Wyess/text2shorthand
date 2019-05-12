@@ -56,7 +56,7 @@ class CharTa(ShugiinChar):
 
     @classmethod
     def path_Ss(cls, ta=None, **kwargs):
-        pass
+        return ShugiinChar.jog(cls.path_S())
 
     @classmethod
     def path_Ssl(cls, ta=None, **kwargs):
@@ -76,7 +76,7 @@ class CharTa(ShugiinChar):
 
     @classmethod
     def path_Ssel(cls, ta=None, **kwargs):
-        pass
+        return ShugiinChar.jog(cls.path_S())
 
     @classmethod
     def path_Ssw(cls, ta=None, **kwargs):
