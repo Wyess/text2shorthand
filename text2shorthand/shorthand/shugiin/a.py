@@ -16,6 +16,7 @@ class CharA(ShugiinChar):
                  model='EL3', head_type='EL', tail_type='EL'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
+        self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'SEL', 'ER'}
 
     
     @classmethod
