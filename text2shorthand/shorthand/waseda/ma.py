@@ -33,9 +33,31 @@ class CharMa(WasedaChar):
     def path_ERsw(cls, ta=None, **kwargs):
         return cls.path_template(ta=ta)
 
-#    @classmethod
-#    def path_ERswr(cls, ta=None, **kwargs):
-#        pass
+    @classmethod
+    def path_ERswr(cls, ta=35, **kwargs):
+        #M 317.468,54.1384 C 325.713,50.6385 334.24004,48.203792 339.06323,53.417218
+
+        #z0 = P(0, -0)
+        #c0 = P(2.90865, 1.23469)
+        #c1 = P(5.9168, 2.0936)
+        z1 = P(7.61832, 0.254417)
+
+        #z0 = P(0, -0)
+        #c0 = z0 + P(2.90865, 1.23469)
+        #z1 = z0 + P(7.61832, 0.254417)
+        #c1 = z1 + P(-1.70151, 1.83918)
+
+        z0 = P(0, -0)
+        c0 = z0 + PP(3.15986, 23)
+        z1 = z0 + PP(7.62256, 1)
+        #c1 = z1 + PP(2.50554, 132)
+        c1 = z1 + PP(2.50554, ta+180)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            #curve(),
+            endknot(*z1)])
 
     @classmethod
     def path_ERe(cls, ta=None, **kwargs):
@@ -109,51 +131,6 @@ class CharMa(WasedaChar):
             controlcurve(c2, c3),
             #curve(),
             endknot(*z2)])
-
-#    @classmethod
-#    def path_ER_smooth(cls, ta=-90):
-#        return cls.path_ER(ta, 1.0)
-
-    @classmethod
-    def path_ERswr(cls, ta=35, **kwargs):
-        #M 317.468,54.1384 C 325.713,50.6385 334.24004,48.203792 339.06323,53.417218
-
-        #z0 = P(0, -0)
-        #c0 = P(2.90865, 1.23469)
-        #c1 = P(5.9168, 2.0936)
-        z1 = P(7.61832, 0.254417)
-
-        #z0 = P(0, -0)
-        #c0 = z0 + P(2.90865, 1.23469)
-        #z1 = z0 + P(7.61832, 0.254417)
-        #c1 = z1 + P(-1.70151, 1.83918)
-
-        z0 = P(0, -0)
-        c0 = z0 + PP(3.15986, 23)
-        z1 = z0 + PP(7.62256, 1)
-        #c1 = z1 + PP(2.50554, 132)
-        c1 = z1 + PP(2.50554, ta+180)
-
-        return pyx.metapost.path.path([
-            beginknot(*z0),
-            controlcurve(c0, c1),
-            #curve(),
-            endknot(*z1)])
-
-#    @classmethod
-#    def path_ER_down(cls, ta=-110, deep=False):
-#        return cls.path_ER(ta=ta)
-#        
-#    @classmethod
-#    def path_ER_cr1(cls, ta=-90):
-#        return mpath([beginknot(0, 0, angle=26), tensioncurve(2.05), endknot(*PP(8, 4), angle=ta)])
-#    
-#    def get_paths(self):
-#        return [self.path_ER()]                             if self.after is None or self.tail_type.endswith('F') else \
-#               [self.path_ER_smooth(self.after.head_angle)] if self.after.head_type in {'EL', 'SW', 'S'} else \
-#               [self.path_ERswr(self.after.head_angle)]     if self.after.head_type in {'SWR'} else \
-#               [self.path_ER_down()]                        if self.after.head_type in {'E', 'NER', 'NE', 'N', 'NL', 'NW', 'SR', 'SE', 'SER'} else \
-#               [self.path_ER()]
 
 class CharMata(CharMa):
     def __init__(self, name='mata', kana='また', model='ER8', head_type='ER', tail_type='ER'):
