@@ -33,3 +33,4 @@ from ..waseda.hu import CharHu
 from ..waseda.he import CharHe
 from ..waseda.ho import CharHo
 from ..waseda.ma import CharMa
+from ..waseda.mi import CharMi
