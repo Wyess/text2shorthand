@@ -71,7 +71,7 @@ class CharSa(WasedaChar):
                  before=None, after=None):
         if before:
             if before.tail_type == 'ER':
-                ha = -90
+                ha = -45
                 tn = 1.5
             elif before.tail_type == 'NER':
                 ha = -40
