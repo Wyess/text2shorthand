@@ -15,6 +15,7 @@ class CharMa(ShugiinChar):
     def __init__(self, name='ma', kana='ま',
                  model='ER9', head_type='ER', tail_type='ER'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.tail_ligature -= {'EL', 'SEL', 'NER', 'SWL'}
 
     @classmethod
     def path_ER(cls, ta=None, **kwargs):
@@ -64,7 +65,17 @@ class CharMa(ShugiinChar):
 
     @classmethod
     def path_ERsr(cls, ta=None, **kwargs):
-        pass
+        #M 339.716,456.236 C 344.771,450.623 365.63329,450.89437 364.202,456.236
+
+        z0 = P(0, -0)
+        c0 = P(1.78329, 1.98014)
+        c1 = P(9.14304, 1.88441)
+        z1 = P(8.63812, -0)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_ERse(cls, ta=None, **kwargs):
