@@ -15,7 +15,7 @@ class CharYa(ShugiinChar):
     def __init__(self, name='ya', kana='や',
                  model='NER9', head_type='NER', tail_type='NER'):
         super().__init__(name, kana, model, head_type, tail_type)
-        self.head_ligature = {'SR', 'S', 'EL', 'SEL'}
+        self.head_ligature -= {'SR', 'S', 'EL', 'SEL'}
 
     @classmethod
     def path_NER(cls, ta=None, **kwargs):
