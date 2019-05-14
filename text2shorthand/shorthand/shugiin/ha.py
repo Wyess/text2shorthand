@@ -15,6 +15,7 @@ class CharHa(ShugiinChar):
     def __init__(self, name='ha', kana='は',
                  model='SEL9', head_type='SEL', tail_type='SEL'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.tail_ligature -= {'SR', 'S', 'ER', 'NER', 'SWL'}
 
     @classmethod
     def path_SEL(cls, ta=None, **kwargs):
@@ -32,7 +33,17 @@ class CharHa(ShugiinChar):
 
     @classmethod
     def path_SELe(cls, ta=None, **kwargs):
-        pass
+        #M 0,456.236 C -1.9819,463.633 3.8644578,481.86374 16.1252,474.785
+
+        z0 = P(0, -0)
+        c0 = P(-0.69917, -2.6095)
+        c1 = P(1.36329, -9.0409)
+        z1 = P(5.68861, -6.54368)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_SELer(cls, ta=None, **kwargs):
