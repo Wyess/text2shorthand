@@ -15,7 +15,7 @@ class CharYa(ShugiinChar):
     def __init__(self, name='ya', kana='や',
                  model='NER9', head_type='NER', tail_type='NER'):
         super().__init__(name, kana, model, head_type, tail_type)
-        self.head_ligature = {'SR'}
+        self.head_ligature = {'SR', 'S', 'EL', 'SEL'}
 
     @classmethod
     def path_NER(cls, ta=None, **kwargs):
@@ -32,7 +32,17 @@ class CharYa(ShugiinChar):
 
     @classmethod
     def path_NERe(cls, ta=None, **kwargs):
-        pass
+        #M 191.691,550.63 C 190.45,544.221 195.84721,529.52156 208.758,532.981
+
+        z0 = P(0, -0)
+        c0 = P(-0.437797, 2.26095)
+        c1 = P(1.46622, 7.44659)
+        z1 = P(6.02086, 6.22617)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_NERer(cls, ta=None, **kwargs):
