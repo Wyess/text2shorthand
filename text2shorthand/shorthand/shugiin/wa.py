@@ -15,7 +15,7 @@ class CharWa(ShugiinChar):
     def __init__(self, name='wa', kana='わ',
                  model='UWL3', head_type='SWL', tail_type='NEL'):
         super().__init__(name, kana, model, head_type, tail_type)
-        self.head_ligature = {'E', 'EL', 'SEL'}
+        self.head_ligature = {'E', 'EL', 'SEL', 'NER'}
 
     @classmethod
     def path_UWL(cls, ta=None, **kwargs):
@@ -337,3 +337,67 @@ class CharWa(ShugiinChar):
     def path_selUWLswl(cls, ta=None, **kwargs):
         pass
 
+
+    @classmethod
+    def path_nerUWL(cls, ta=None, **kwargs):
+        return cls.path_eUWL()
+
+    @classmethod
+    def path_nerUWLe(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLer(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLne(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLner(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLnel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLs(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLsl(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLsr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLse(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLser(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLsel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLsw(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLswr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nerUWLswl(cls, ta=None, **kwargs):
+        pass
