@@ -15,6 +15,7 @@ class CharRa(ShugiinChar):
     def __init__(self, name='ra', kana='ら',
                  model='SER9', head_type='SER', tail_type='SER'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.tail_ligature -= {'SR', 'S', 'EL', 'ER', 'SWL'}
 
     @classmethod
     def path_SER(cls, ta=None, **kwargs):
