@@ -10,3 +10,4 @@ from ..shugiin.ma import CharMa
 from ..shugiin.ya import CharYa
 from ..shugiin.ra import CharRa
 from ..shugiin.wa import CharWa
+from ..shugiin.yama import CharYama
