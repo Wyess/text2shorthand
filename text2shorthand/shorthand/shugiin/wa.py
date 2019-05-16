@@ -16,6 +16,7 @@ class CharWa(ShugiinChar):
                  model='UWL3', head_type='SWL', tail_type='NEL'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {'E', 'EL', 'SEL', 'NER'}
+        self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'ER'
 
     @classmethod
     def path_UWL(cls, ta=None, **kwargs):
