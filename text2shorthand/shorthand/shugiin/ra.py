@@ -49,7 +49,17 @@ class CharRa(ShugiinChar):
 
     @classmethod
     def path_SERner(cls, ta=None, **kwargs):
-        pass
+        #M 268.536,78.6614 C 275.763,78.409 282.143,85.462627 282.143,94.8777
+
+        z0 = P(0, -0)
+        c0 = P(2.54952, 0.0890411)
+        c1 = P(4.80025, -2.39932)
+        z1 = P(4.80025, -5.72075)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_SERnel(cls, ta=None, **kwargs):
