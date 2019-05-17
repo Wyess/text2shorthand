@@ -36,3 +36,4 @@ from ..waseda.ma import CharMa
 from ..waseda.mi import CharMi
 from ..waseda.mu import CharMu
 from ..waseda.me import CharMe
+from ..waseda.mo import CharMo
