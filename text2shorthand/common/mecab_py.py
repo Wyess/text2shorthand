@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import re
-import MeCab
+#import MeCab
 import janome.tokenizer
 import yaml
 
