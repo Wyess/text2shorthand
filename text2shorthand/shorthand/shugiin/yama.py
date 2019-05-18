@@ -15,6 +15,7 @@ class CharYama(ShugiinChar):
     def __init__(self, name='yama', kana='やま',
                  model='NER9ER9', head_type='NER', tail_type='ER'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.head_ligature = {'SR'}
         self.tail_ligature -= {'E', 'S', 'EL', 'SEL', 'NER'}
 
     @classmethod
@@ -91,3 +92,76 @@ class CharYama(ShugiinChar):
     def path_NERERswl(cls, ta=None, **kwargs):
         pass
 
+    @classmethod
+    def path_srNERER(cls, ta=None, **kwargs):
+        #M 0,267.449 C 12.887565,240.66513 35.298643,226.31696 48.157267,245.25435
+
+        z0 = P(0, -0)
+        c0 = P(4.54645, 9.44875)
+        c1 = P(12.4526, 14.5105)
+        z1 = P(16.9888, 7.82978)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
+
+    @classmethod
+    def path_srNERERe(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERer(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERne(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERner(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERnel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERs(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERsl(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERsr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERse(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERser(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERsel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERsw(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERswr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_srNERERswl(cls, ta=None, **kwargs):
+        pass
