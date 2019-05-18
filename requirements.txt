@@ -1,0 +1,4 @@
+janome
+PyX
+PyYAML
+jaconv
