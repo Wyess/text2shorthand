@@ -15,7 +15,7 @@ class CharMa(ShugiinChar):
     def __init__(self, name='ma', kana='ま',
                  model='ER9', head_type='ER', tail_type='ER'):
         super().__init__(name, kana, model, head_type, tail_type)
-        self.tail_ligature -= {'EL', 'SEL', 'NER', 'SWL'}
+        self.tail_ligature -= {'EL', 'SEL', 'NER', 'SWL', 'S', 'E'}
 
     @classmethod
     def path_ER(cls, ta=None, **kwargs):
