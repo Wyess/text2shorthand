@@ -36,11 +36,13 @@ class Char():
         self.dot_pos                = {}
         self.description            = ''
         self.color                  = color
-        self.head_ligature          = {}
-        self.tail_ligature          = {}
-        self.both_ligature          = {}
-        self.prev_name_ligature     = {}
-        self.next_name_ligature     = {}
+        self.head_ligature          = set()
+        self.tail_ligature          = set()
+        self.both_ligature          = set() 
+        self.head_translation       = {}
+        self.tail_translation       = {}
+        self.prev_name_ligature     = set()
+        self.next_name_ligature     = set()
         self.drawn                  = False
         self.drawn_extra            = None
 
@@ -51,7 +53,10 @@ class Char():
         self.color = pyx.color.rgb.black
 
         bt = getattr(self.before, 'tail_type', '')
+        bt = self.head_translation.get(bt, bt)
+
         ah = getattr(self.after, 'head_type', '')
+        ah = self.tail_translation.get(ah, ah)
 
         me = kwargs.get('me', re.sub('[0-9]', '', self.model))
 
