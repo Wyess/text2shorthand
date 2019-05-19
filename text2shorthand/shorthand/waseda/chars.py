@@ -41,3 +41,4 @@ from ..waseda.ya import CharYa
 from ..waseda.yu import CharYu
 from ..waseda.yo import CharYo
 from ..waseda.ra import CharRa
+from ..waseda.ri import CharRi
