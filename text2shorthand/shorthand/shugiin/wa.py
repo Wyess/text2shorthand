@@ -17,7 +17,7 @@ class CharWa(ShugiinChar):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {'E', 'EL', 'SEL', 'NER'}
         self.head_translation = {'SEL': 'E', 'NER': 'E'}
-        self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'ER', 'SWL'}
+        self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'ER', 'SWL', 'NER'}
 
     @classmethod
     def path_UWL(cls, ta=None, **kwargs):
