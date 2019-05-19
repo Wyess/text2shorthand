@@ -39,3 +39,5 @@ from ..waseda.me import CharMe
 from ..waseda.mo import CharMo
 from ..waseda.ya import CharYa
 from ..waseda.yu import CharYu
+from ..waseda.yo import CharYo
+from ..waseda.ra import CharRa
