@@ -63,15 +63,20 @@ def parse(in_txt='in.txt', dic_csv='', dic_merge_split_yaml='', show_start_end=F
                     ret.append(tmp)
             
             if len(ret) != 0:
+                #print(ent['表層形'], end=',')
                 for c in ret[-1]:
                     cs = c['符号クラス'].values[0].split('|')
                     for cc in cs:
-                        xml += f'<char class="{cc}" />\n'
+                        #print(cc)
+                        #xml += f'<char class="{cc}" />\n'
+                        xml += f'<char class="{cc}" origin="{ent["表層形"]}"/>\n'
 
         else:
+            #print(ent['表層形'], end=',')
             cs = res['符号クラス'].values[0].split('|')
             for cc in cs:
-                xml += f'<char class="{cc}" />\n'
+                #print(cc)
+                xml += f'<char class="{cc}" origin="{ent["表層形"]}"/>\n'
 
     if show_start_end:
         xml += '<char class="CharEnd" />\n'

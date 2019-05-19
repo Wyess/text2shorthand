@@ -19,6 +19,7 @@ class Context():
 
         pyx.unit.set(defaultunit='mm')
         
+        self.xml = ''
         self.dic_csv = dic_csv
         self.dic_merge_split_yaml = dic_merge_split_yaml
         self.canvas = pyx.canvas.canvas()
@@ -26,15 +27,15 @@ class Context():
         self.height = height
 
     def parse_txt_file(self, in_txt='in.txt'):
-        xml = mecab_result_to_xml.parse(in_txt=in_txt, 
+        self.xml = mecab_result_to_xml.parse(in_txt=in_txt, 
             dic_csv=self.dic_csv,
             dic_merge_split_yaml=self.dic_merge_split_yaml)
-        self.parse_xml_file(xml=io.StringIO(xml))
+        self.xml = self.parse_xml_file(xml=io.StringIO(self.xml))
 
     def parse_xml_file(self, xml='in.xml'):
         self.chars = [Char()]
 
-        tree = ET.parse(xml)
+        tree = ET.parse(xml, ET.XMLParser(encoding='utf-8'))
         document = tree.getroot()
 
         for page in document:
@@ -44,6 +45,8 @@ class Context():
                     for a, v in char.attrib.items():
                         if a == 'class':
                             charclass = v
+                        elif a == 'origin':
+                            pass
                         else:
                             params += f'{delim}{a}={v}'
                             delim = ', '
@@ -53,6 +56,8 @@ class Context():
                         pass
 
         self.chars.append(Char())
+
+        return ET.tostring(document, encoding='utf8', method='xml').decode()
 
     def _connect_all(self):
         for before, char, after in zip(self.chars[:-2], self.chars[1:-1], self.chars[2:]):
@@ -99,7 +104,27 @@ class Context():
             char.draw(self.canvas)
 
         for i, char in enumerate(self.chars):
-            print(f"{char.name}: {len(char.paths) + len(char.paths_extra)}")
+            if char.name != '':
+                #print(f"{char.name},{len(char.paths)},{len(char.paths_extra)}")
+                pass
+
+    def write_log_xml(self, xml=None, out_xml='log.xml'):
+        xml = xml or io.StringIO(self.xml)
+        tree = ET.parse(xml, ET.XMLParser(encoding='utf-8'))
+        document = tree.getroot()
+
+        for page in document:
+            for clause in page:
+                for i, char in enumerate(clause):
+                    char.set('paths', f"{len(self.chars[i+1].paths)}")
+                    char.set('paths_extra', f"{len(self.chars[i+1].paths_extra)}")
+
+        log = ET.tostring(document, encoding='utf8', method='xml').decode()
+
+        with open(out_xml, mode='w') as f:
+            f.write(log)
+
+        return log
     
     def typeset(self):
         self._connect_all()
@@ -120,4 +145,5 @@ if __name__ == '__main__':
     context = Context(shorthand='waseda_shorthand', width=150)
     context.parse_xml_file('out.xml')
     context.typeset()
+    context.write_log_xml(out_xml='log.xml')
     context.write_svg_file('out.svg')

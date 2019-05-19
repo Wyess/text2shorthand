@@ -10,6 +10,7 @@ def run(shorthand=None, in_txt=None, out=None):
             width=150)
         context.parse_txt_file(in_txt=in_txt)
         context.typeset()
+        context.write_log_xml(out_xml='log.xml')
         if out.endswith('.svg'):
             context.write_svg_file(out)
         elif out.endswith('.pdf'):
