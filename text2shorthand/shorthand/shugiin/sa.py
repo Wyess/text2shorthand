@@ -102,7 +102,17 @@ class CharSa(ShugiinChar):
 
     @classmethod
     def path_SRsw(cls, ta=None, **kwargs):
-        pass
+        #M 292.902,361.843 C 297.687,364.834 301.03147,388.48369 292.949,386.318
+
+        z0 = P(0, -0)
+        c0 = P(1.68804, -1.05516)
+        c1 = P(2.8679, -9.39824)
+        z1 = P(0.0165806, -8.63424)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_SRswr(cls, ta=None, **kwargs):
