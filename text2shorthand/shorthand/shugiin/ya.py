@@ -16,7 +16,7 @@ class CharYa(ShugiinChar):
                  model='NER9', head_type='NER', tail_type='NER'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {'SR'}
-        self.head_translation = {'SEL': 'SR'}
+        self.head_translation = {'SWLSEL': 'SR'}
         self.tail_ligature -= {'SR', 'S', 'EL', 'SEL', 'SWL'}
 
     @classmethod

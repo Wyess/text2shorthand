@@ -13,7 +13,7 @@ from pyx.metapost.path import (
 
 class CharWa(ShugiinChar):
     def __init__(self, name='wa', kana='わ',
-                 model='UWL3', head_type='SWL', tail_type='SEL'):
+                 model='UWL3', head_type='SWL', tail_type='SWLSEL'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {'E', 'EL', 'SEL', 'NER'}
         self.head_translation = {'SEL': 'E', 'NER': 'E'}
