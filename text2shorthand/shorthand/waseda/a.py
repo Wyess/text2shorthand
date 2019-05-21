@@ -59,12 +59,6 @@ class CharA(WasedaChar):
             return [self.path_EL_up()]                          
                
         return [self.path_EL()]
-
-
-class CharAn(CharA):
-    def __init__(self, name='an', kana='あん',
-                 model='EL4F', head_type='EL', tail_type='F'):
-        super().__init__(name, kana, model, head_type, tail_type)
         
 class CharAku(CharA):
     def __init__(self, name='aku', kana='あく',
