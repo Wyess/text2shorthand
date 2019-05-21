@@ -75,15 +75,10 @@ class CharUku(CharU):
     def path_S(cls):
         return cls.barb([super().path_S()])[0]
 
-class CharUn(CharU):
-    def __init__(self, name='un', kana='うん', 
-                 model='S4F', head_type='S', tail_type='NEF'):
-        super().__init__(name, kana, model, head_type, tail_type)
-
-class CharKun(CharUn):
-    def __init__(self, name='kun', kana='くん', 
-                 model='S4F', head_type='S', tail_type='F'):
-        super().__init__(name, kana, model, head_type, tail_type)
+#class CharKun(CharUn):
+#    def __init__(self, name='kun', kana='くん', 
+#                 model='S4F', head_type='S', tail_type='F'):
+#        super().__init__(name, kana, model, head_type, tail_type)
 
 class CharUki(WasedaChar):
     def __init__(self, name='uki', kana='うき', 
