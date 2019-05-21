@@ -45,3 +45,4 @@ from ..waseda.re import CharRe
 from ..waseda.ro import CharRo
 from ..waseda.wa import CharWa
 from ..waseda.an import CharAn
+from ..waseda.in import CharIn

@@ -97,11 +97,6 @@ class CharI(WasedaChar):
         
         return [self.path_ER()]
 
-class CharIn(CharI):
-    def __init__(self, name='in', kana='いん',
-                 model='ER4F', head_type='ER', tail_type='F'):
-        super().__init__(name, kana, model, head_type, tail_type)
-
 class CharIku(CharI):
     def __init__(self, name='iku', kana='いく',
                  model='BER4', head_type='BER', tail_type='ER'):
