@@ -53,7 +53,23 @@ class CharWa(ShugiinChar):
 
     @classmethod
     def path_UWLne(cls, ta=None, **kwargs):
-        pass
+
+        #M 351.69,362.63996 C 349.182,362.63996 346.74976,363.92445 346.2721,366.23486 345.38854,370.50857 353.04278,370.91471 352.96948,368.01242
+
+        z0 = P(0, -0)
+        c0 = P(-0.884767, -0)
+        c1 = P(-1.74281, -0.45314)
+        z1 = P(-1.91131, -1.2682)
+        c2 = P(-2.22302, -2.77587)
+        c3 = P(0.477231, -2.91915)
+        z2 = P(0.451372, -1.89528)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
 
     @classmethod
     def path_UWLner(cls, ta=None, **kwargs):
@@ -132,7 +148,23 @@ class CharWa(ShugiinChar):
 
     @classmethod
     def path_eUWLne(cls, ta=None, **kwargs):
-        pass
+
+        #M 351.69,362.63996 C 349.182,362.63996 346.74976,363.92445 346.2721,366.23486 345.38854,370.50857 353.04278,370.91471 352.96948,368.01242
+
+        z0 = P(0, -0)
+        c0 = P(-0.884767, -0)
+        c1 = P(-1.74281, -0.45314)
+        z1 = P(-1.91131, -1.2682)
+        c2 = P(-2.22302, -2.77587)
+        c3 = P(0.477231, -2.91915)
+        z2 = P(0.451372, -1.89528)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
 
     @classmethod
     def path_eUWLner(cls, ta=None, **kwargs):
