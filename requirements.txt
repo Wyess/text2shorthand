@@ -2,3 +2,5 @@ janome
 PyX
 PyYAML
 jaconv
+svgpathtools
+pandas
