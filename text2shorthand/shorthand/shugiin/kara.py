@@ -19,7 +19,11 @@ class JoshiKara(ShugiinChar):
         self.tail_ligature = {}
 
     def set_next_head(self, flick_len=2.0, dz=P(0, -1.5)):
-        super().set_next_head(flick_len, dz)
+        if getattr(self.after, 'name', '') in {'ta'}:
+            self.to_flick = False
+            super().set_next_head(flick_len, P(0, 0))
+        else:
+            super().set_next_head(flick_len, dz)
 
     @classmethod
     def path_ESWRF(cls, ta=None, **kwargs):
