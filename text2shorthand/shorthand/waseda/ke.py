@@ -923,14 +923,6 @@ class CharKe(WasedaChar):
             #curve(),
             endknot(*z5)])
 
-class CharKen(CharKe):
-    def __init__(self, name='ken', kana='けん',
-                 model='E16CL1E1F', head_type='E', tail_type='F'):
-        super().__init__(name, kana, model, head_type, tail_type)
-
-    def get_paths(self):
-        return [self.path_ECLE()]
-
 class CharKeku(CharKe):
     def __init__(self, name='keku', kana='けく',
                  model='BE16CL1', head_type='BE', tail_type='ECL1'):
@@ -942,13 +934,6 @@ class CharKeku(CharKe):
         else:
             return super().get_paths()
         
-#
-#    def set_next_head(self):
-#        if self.before and self.before.tail_type not in {'', 'P', 'E'}:
-#            self.head = self.before.tail - self.get_pos_xku()
-#
-#        super().set_next_head()
-
 class CharKeke(CharKe):
     def __init__(self, name='keke', kana='けけ',
                  model='E16CL1SE3', head_type='E', tail_type='SE'):
