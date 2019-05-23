@@ -48,3 +48,4 @@ from ..waseda.an import CharAn
 from ..waseda.in_ import CharIn
 from ..waseda.un import CharUn
 from ..waseda.en import CharEn
+from ..waseda.on import CharOn
