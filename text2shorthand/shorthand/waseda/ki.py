@@ -970,14 +970,6 @@ class CharKi(WasedaChar):
             #curve(),
             endknot(*z5)])
 
-class CharKin(CharKi):
-    def __init__(self, name='kin', kana='きん',
-                 model='E8CL1E1F', head_type='E', tail_type='EF'):
-        super().__init__(name, kana, model, head_type, tail_type)
-
-    def get_paths(self):
-        return [self.path_ECLEF()]
-
 class CharKiku(CharKi):
     def __init__(self, name='kiku', kana='きく',
                  model='BE8CL1', head_type='BE', tail_type='ECL1'):

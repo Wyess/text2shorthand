@@ -50,3 +50,4 @@ from ..waseda.un import CharUn
 from ..waseda.en import CharEn
 from ..waseda.on import CharOn
 from ..waseda.kan import CharKan
+from ..waseda.kin import CharKin
