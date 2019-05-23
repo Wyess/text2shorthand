@@ -1,5 +1,6 @@
 from ..waseda.char import WasedaChar
-from ..waseda.ka import CharKa, CharKan
+from ..waseda.ka import CharKa
+from ..waseda.kan import CharKan
 from text2shorthand.common.point import Point as P, PPoint as PP
 import pyx
 from pyx.metapost.path import (
