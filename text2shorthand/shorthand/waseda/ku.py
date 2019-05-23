@@ -1002,14 +1002,6 @@ class CharKu(WasedaChar):
             #curve(),
             endknot(*z5)])
 
-class CharKun(CharKu):
-    def __init__(self, name='kun', kana='くん',
-                 model='E8CL4E1F', head_type='E', tail_type='F'):
-        super().__init__(name, kana, model, head_type, tail_type)
-
-    def get_paths(self):
-        return [self.path_ECLE()]
-
 class CharKuku(CharKu):
     def __init__(self, name='kuku', kana='くく',
                  model='BE8CL4', head_type='BE', tail_type='ECL4'):
