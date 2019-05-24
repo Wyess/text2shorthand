@@ -56,3 +56,4 @@ from ..waseda.ken import CharKen
 from ..waseda.kon import CharKon
 from ..waseda.san import CharSan
 from ..waseda.shin import CharShin
+from ..waseda.sun import CharSun
