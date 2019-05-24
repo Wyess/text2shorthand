@@ -167,11 +167,6 @@ class CharSa(WasedaChar):
             self.head_type = self.tail_type = 'NEL'
             return [self.path_NEL(before=self.before, after=self.after)]
 
-class CharSan(CharSa):
-    def __init__(self, name='san', kana='さん',
-                 model='NEL8F|SWR8F', head_type='NEL|SWR', tail_type='NELF|SWRF'):
-        super().__init__(name, kana, model, head_type, tail_type)
-
 class CharSaku(CharSa):
     def __init__(self, name='saku', kana='さく',
                  model='SWR8F', head_type='SWR', tail_type='SWRF'):
