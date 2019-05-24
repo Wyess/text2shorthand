@@ -53,3 +53,4 @@ from ..waseda.kan import CharKan
 from ..waseda.kin import CharKin
 from ..waseda.kun import CharKun
 from ..waseda.ken import CharKen
+from ..waseda.kon import CharKon

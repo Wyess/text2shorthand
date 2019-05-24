@@ -34,10 +34,6 @@ class CharKo(WasedaChar):
     def path_Eser(cls, ta=None, **kwargs):
         return cls.jog(cls.path_E(), 0.1)
 
-class CharKon(CharKo, CharKan):
-    def __init__(self, name='kon', kana='こん', model='E16', head_type='E', tail_type='F'):
-        super().__init__(name, kana, model, head_type, tail_type)
-
 class CharKoku(CharKo):
     def __init__(self, name='koku', kana='こく', model='E16', head_type='BE', tail_type='E'):
         super().__init__(name, kana, model, head_type, tail_type)
