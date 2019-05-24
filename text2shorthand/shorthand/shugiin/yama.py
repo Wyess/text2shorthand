@@ -82,7 +82,17 @@ class CharYama(ShugiinChar):
 
     @classmethod
     def path_NERERsw(cls, ta=None, **kwargs):
-        pass
+        #M 0,550.63 C 4.928121,525.69735 32.441373,516.82942 45.6684,527.861
+
+        z0 = P(0, -0)
+        c0 = P(1.73853, 8.79568)
+        c1 = P(11.4446, 11.9241)
+        z1 = P(16.1108, 8.0324)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_NERERswr(cls, ta=None, **kwargs):
