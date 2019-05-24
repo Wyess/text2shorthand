@@ -118,7 +118,17 @@ class CharYa(ShugiinChar):
 
     @classmethod
     def path_srNERe(cls, ta=None, **kwargs):
-        pass
+        #M 336.122,464.266 C 338.661,459.859 347.92659,444.19121 360.305,447.508
+
+        z0 = P(0, -0)
+        c0 = P(0.895703, 1.55469)
+        c1 = P(4.1644, 7.08194)
+        z1 = P(8.53122, 5.91185)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_srNERer(cls, ta=None, **kwargs):
