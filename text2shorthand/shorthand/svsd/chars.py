@@ -5,3 +5,5 @@ from ..svsd.i import CharI
 from ..svsd.u import CharU
 from ..svsd.e import CharE
 from ..svsd.o import CharO
+from ..svsd.ka import CharKa
+
