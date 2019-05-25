@@ -12,7 +12,7 @@ from pyx.metapost.path import (
 
 
 class CharKa(SvsdChar):
-    def __init__(self, name='a', kana='あ',
+    def __init__(self, name='ka', kana='か',
                  model='NEL10', head_type='NEL', tail_type='NEL'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
