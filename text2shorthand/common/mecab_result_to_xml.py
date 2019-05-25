@@ -2,6 +2,7 @@
 
 import sys
 import io
+import re
 import pandas as pd
 import jaconv
 from ..common import mecab_py
@@ -67,9 +68,15 @@ def parse(in_txt='in.txt', dic_csv='', dic_merge_split_yaml='', show_start_end=F
                 for c in ret[-1]:
                     cs = c['符号クラス'].values[0].split('|')
                     for cc in cs:
-                        #print(cc)
-                        #xml += f'<char class="{cc}" />\n'
-                        xml += f'<char class="{cc}" origin="{ent["表層形"]}"/>\n'
+                        m = re.match(r'(?P<char_class>\w+)(?:\((?P<attrs>.+)\))?', cc)
+                        if m:
+                            char_class = m.group(1)
+                            attrs = m.group(2) or ''
+                        else:
+                            char_class = 'CharSpace'
+                            attrs = ''
+                        #print(f'<char class="{char_class}" origin="{ent["表層形"]}" {attrs}/>\n')
+                        xml += f'<char class="{char_class}" origin="{ent["表層形"]}" {attrs}/>\n'
 
         else:
             #print(ent['表層形'], end=',')
