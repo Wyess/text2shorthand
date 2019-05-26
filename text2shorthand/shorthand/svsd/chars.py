@@ -6,4 +6,6 @@ from ..svsd.u import CharU
 from ..svsd.e import CharE
 from ..svsd.o import CharO
 from ..svsd.ka import CharKa
-
+from ..svsd.ki import CharKi
+from ..svsd.ku import CharKu
+from ..svsd.ke import CharKe

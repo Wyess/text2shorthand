@@ -64,14 +64,26 @@ class SvsdChar(Char):
             return super().get_paths(me=me)
 
     def get_paths_extra(self, **kwargs):
-        if self.soundmark == 'LONG':
-            return [self.path_SEL1().transformed(pyx.trafo.translate(*self.get_pos_chouon()))]
+        paths = []
+        if self.soundmark == 'SEMIVOICED':
+            paths.append(self.get_voice_mark(idx=0, at=self.get_semivoiced_pos()))
         elif self.soundmark == 'VOICED':
-            return [self.path_P().transformed(pyx.trafo.translate(*self.get_pos_dakuon()))]
-        elif self.soundmark in {'LONG_VOICED', 'VOICED_LONG'}:
-            return [self.path_SEL1().transformed(pyx.trafo.translate(*self.get_pos_choudakuon()))]
-        else:
-            return []
+            paths.append(self.get_voice_mark(idx=0, at=self.get_voiced_pos()))
+
+        return paths
+
+    def get_semivoiced_pos(self):
+        return 2.0
+
+    def get_voiced_pos(self):
+        return self.paths[0].arclen() * 0.5 
+
+    def get_voice_mark(self, idx=0, at=15, dd=0, len_=2):
+        path = self.paths[idx]
+        bar = path.tangent(at, len_).transformed(pyx.trafo.trafo().rotated(-90 + dd, *path.at(at)))
+        delta = ((bar.at(0)[0] - bar.at(len_)[0])/2, (bar.at(0)[1] - bar.at(len_)[1])/2)
+        bar = bar.transformed(pyx.trafo.translate(*delta))
+        return bar
 
     @classmethod
     def path_SEL1(self):
