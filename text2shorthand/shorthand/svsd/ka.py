@@ -13,8 +13,8 @@ from pyx.metapost.path import (
 
 class CharKa(SvsdChar):
     def __init__(self, name='ka', kana='か',
-                 model='NEL10', head_type='NEL', tail_type='NEL'):
-        super().__init__(name, kana, model, head_type, tail_type)
+                 model='NEL10', head_type='NEL', tail_type='NEL', soundmark=''):
+        super().__init__(name, kana, model, head_type, tail_type, soundmark)
         self.head_ligature = {}
         self.tail_ligature = {'NER'}
     
