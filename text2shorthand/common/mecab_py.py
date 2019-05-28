@@ -29,7 +29,24 @@ def parse(in_txt='in.txt', raw=False, dic_merge_split_yaml=''):
         for entry in dic:
             target = r'\S*?\n'.join(entry[:-1] + [''])
             s = re.sub(rf"^{target}", f"{entry[-1]}\n", s, flags=re.MULTILINE|re.DOTALL)
+
+        #print(s)
         
+        while True:
+            m = re.search(r'(?P<quoted>^".+?\n".+?\n)', s, re.MULTILINE | re.DOTALL)
+            #m = re.search(r'(?P<quoted>^「.+?\n」.+?\n)', s, re.MULTILINE | re.DOTALL)
+            if m:
+                word = ''
+                yomi = ''
+                for line in m.group('quoted').splitlines()[1:-1]:
+                    word += line.split(',')[0]
+                    yomi += line.split(',')[-1]
+                
+                new = f"{word},{'*,' * 8}{yomi}\n"
+                orig = m.group(0)
+                s = re.sub(re.escape(orig), new, s)
+            else:
+                break
     return s
 
 if __name__ == '__main__':
