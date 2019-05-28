@@ -17,3 +17,5 @@ from ..shugiin.mo import JoshiMo
 from ..shugiin.kara import JoshiKara
 from ..shugiin.karamo import JoshiKaramo
 from ..shugiin.karano import JoshiKarano
+from ..shugiin.saka import CharSaka
+from ..shugiin.naka import CharNaka
