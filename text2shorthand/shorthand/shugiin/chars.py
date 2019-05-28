@@ -20,3 +20,5 @@ from ..shugiin.karano import JoshiKarano
 from ..shugiin.saka import CharSaka
 from ..shugiin.naka import CharNaka
 from ..shugiin.naga import CharNaga
+from ..shugiin.maka import CharMaka
+from ..shugiin.hana import CharHana
