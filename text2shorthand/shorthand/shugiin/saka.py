@@ -16,7 +16,7 @@ class CharSaka(ShugiinChar):
                  model='HSR9', head_type='NER', tail_type='SR'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
-        self.tail_ligature = {'NER'}
+        self.tail_ligature -= {'SR', 'EL', 'SW'}
 
     @classmethod
     def path_HSR(cls, ta=None, **kwargs):
