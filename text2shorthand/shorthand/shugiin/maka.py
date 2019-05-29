@@ -13,9 +13,9 @@ from pyx.metapost.path import (
 
 class CharMaka(ShugiinChar):
     def __init__(self, name='maka', kana='まか',
-                 model='HER9', head_type='HER', tail_type='ER'):
+                 model='HER9', head_type='NWR', tail_type='ER'):
         super().__init__(name, kana, model, head_type, tail_type)
-        self.head_ligature = {}
+        self.head_ligature = {'SR'}
         #self.tail_ligature = {}
 
     def set_next_head(self, flick_len=2.0, dz=P(0, 0)):
@@ -102,4 +102,20 @@ class CharMaka(ShugiinChar):
     def path_HERswl(self, ta=None, **kwwargs):
         pass
 
+    @classmethod
+    def path_srHER(self, ta=None, **kwwargs):
+        #M 282.04666,286.03074 C 281.0357,286.64293 277.11511,285.82912 279.963,283.162 291.26211,272.58012 307.143,278.152 310.419,284.869
+        z0 = P(0, -0)
+        c0 = P(-0.356644, -0.215967)
+        c1 = P(-1.73974, 0.0711271)
+        z1 = P(-0.735069, 1.01203)
+        c2 = P(3.25101, 4.74508)
+        c3 = P(8.85343, 2.77944)
+        z2 = P(10.0091, 0.409836)
 
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
