@@ -16,7 +16,7 @@ class CharNaka(ShugiinChar):
                  model='HEL9', head_type='HEL', tail_type='EL'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
-        #self.tail_ligature = {}
+        self.tail_ligature -= {'ER', 'NER'}
     
     @classmethod
     def path_HEL(self, ta=None, **kwwargs):
@@ -96,5 +96,3 @@ class CharNaka(ShugiinChar):
     @classmethod
     def path_HELswl(self, ta=None, **kwwargs):
         pass
-
-
