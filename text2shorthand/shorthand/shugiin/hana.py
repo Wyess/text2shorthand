@@ -16,7 +16,7 @@ class CharHana(ShugiinChar):
                  model='HSEL9', head_type='HSEL', tail_type='SEL'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
-        #self.tail_ligature = {}
+        self.tail_ligature -= {'NER', 'S''}
     
     @classmethod
     def path_HSEL(self, ta=None, **kwwargs):
