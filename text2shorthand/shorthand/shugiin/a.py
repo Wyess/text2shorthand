@@ -13,7 +13,8 @@ from pyx.metapost.path import (
 
 class CharA(ShugiinChar):
     def __init__(self, name='a', kana='あ',
-                 model='EL3', head_type='EL', tail_type='EL'):
+                 model='EL3', head_type='EL', tail_type='EL',
+                 flick_pos=None):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
         self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'SEL', 'ER', 'NER', 'SWL'}

@@ -13,9 +13,10 @@ from pyx.metapost.path import (
 
 class CharKa(ShugiinChar):
     def __init__(self, name='ka', kana='か',
-                 model='E9', head_type='E', tail_type='E'):
-        super().__init__(name, kana, model, head_type, tail_type)
-        self.tail_ligature = {'E'}
+                 model='E9', head_type='E', tail_type='E',
+                 flick_pos=None):
+        super().__init__(name, kana, model, head_type, tail_type, flick_pos=flick_pos)
+        #self.tail_ligature = {'E'}
     
     @classmethod
     def path_E(cls, ta=None, **kwargs):

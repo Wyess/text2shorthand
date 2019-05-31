@@ -13,9 +13,11 @@ from pyx.metapost.path import (
 
 class CharSaka(ShugiinChar):
     def __init__(self, name='saka', kana='さか',
-                 model='HSR9', head_type='NER', tail_type='SR'):
+                 model='HSR9', head_type='NER', tail_type='SR',
+                 flick_pos=None):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
+        self.tail_ligature |= {'NWR'}
         self.tail_ligature -= {'SR', 'EL', 'SW'}
 
     @classmethod
@@ -110,3 +112,24 @@ class CharSaka(ShugiinChar):
     @classmethod
     def path_HSRswl(cls, ta=None, **kwargs):
         pass
+
+    @classmethod
+    def path_HSRnwr(cls, ta=None, **kwargs):
+        #M 281.662,267.449 C 279.951,264.565 281.31807,261.00063 283.069,261.351 290.57807,262.85363 289.92846,283.64958 282.04666,286.03074
+        z2 = P(0.135699, -6.55522)
+        z0 = P(0, -0)
+        c0 = z0 + PP(1.18299, 120)
+        z1 = z0 + PP(2.20776, 77)
+        #z1 = z2 - PP(8.71393, ta + 72)
+        c1 = z1 + PP(0.629935, 168)
+        c2 = z1 + PP(2.70155, -11)
+        z2 = z1 + PP(8.71393, -92)
+        #c3 = z2 + PP(2.90464, 16)
+        c3 = z2 + PP(2.90464, ta+180)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])

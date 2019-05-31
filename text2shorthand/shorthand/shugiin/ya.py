@@ -13,7 +13,8 @@ from pyx.metapost.path import (
 
 class CharYa(ShugiinChar):
     def __init__(self, name='ya', kana='や',
-                 model='NER9', head_type='NER', tail_type='NER'):
+                 model='NER9', head_type='NER', tail_type='NER',
+                 flick_pos=None):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {'SR'}
         self.head_translation = {'SWLSEL': 'SR'}
@@ -56,7 +57,16 @@ class CharYa(ShugiinChar):
 
     @classmethod
     def path_NERne(cls, ta=None, **kwargs):
-        pass
+        #M 119.172,344.194 C 117.931,337.785 123.32821,323.08656 136.239,326.546
+        z0 = P(0, -0)
+        c0 = P(-0.437797, 2.26095)
+        c1 = P(1.46622, 7.44624)
+        z1 = P(6.02086, 6.22582)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_NERner(cls, ta=None, **kwargs):

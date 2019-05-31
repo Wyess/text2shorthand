@@ -13,7 +13,8 @@ from pyx.metapost.path import (
 
 class CharNa(ShugiinChar):
     def __init__(self, name='na', kana='な',
-                 model='EL9', head_type='EL', tail_type='EL'):
+                 model='EL9', head_type='EL', tail_type='EL',
+                 flick_pos=None):
         super().__init__(name, kana, model, head_type, tail_type)
         self.tail_ligature -= {'S', 'SEL', 'ER', 'NER', 'SWL', 'E', 'SW'}
 

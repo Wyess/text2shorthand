@@ -13,11 +13,12 @@ from pyx.metapost.path import (
 
 class CharWa(ShugiinChar):
     def __init__(self, name='wa', kana='わ',
-                 model='UWL3', head_type='SWL', tail_type='SWLSEL'):
+                 model='UWL3', head_type='SWL', tail_type='SWLSEL',
+                 flick_pos=None):
         super().__init__(name, kana, model, head_type, tail_type)
-        self.head_ligature = {'E', 'EL', 'SEL', 'NER'}
-        self.head_translation = {'SEL': 'E', 'NER': 'E'}
-        self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'ER', 'SWL', 'NER', 'SER'}
+        #self.head_ligature = {'E', 'EL', 'SEL', 'NER'}
+        #self.head_translation.update(dict.fromkeys(['SEL', 'NER', 'SWLSEL'], 'E'))
+        #self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'ER', 'SWL', 'NER', 'SER'}
 
     @classmethod
     def path_UWL(cls, ta=None, **kwargs):

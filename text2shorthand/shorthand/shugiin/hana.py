@@ -17,6 +17,7 @@ class CharHana(ShugiinChar):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
         self.tail_ligature -= {'NER', 'S'}
+        self.tail_translation = {'EL': 'E'}
     
     @classmethod
     def path_HSEL(self, ta=None, **kwwargs):
@@ -39,7 +40,21 @@ class CharHana(ShugiinChar):
 
     @classmethod
     def path_HSELe(self, ta=None, **kwwargs):
-        pass
+        #M 0,267.449 C 0.417589,264.433 -4.12118,263.993 -4.6317,266.736 -5.89042,273.5 0.71807872,287.19209 12.3512,284.075
+        z0 = P(0, -0)
+        c0 = P(0.147316, 1.06398)
+        c1 = P(-1.45386, 1.2192)
+        z1 = P(-1.63396, 0.251531)
+        c2 = P(-2.07801, -2.13466)
+        c3 = P(0.253322, -6.96492)
+        z2 = P(4.35723, -5.86528)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
 
     @classmethod
     def path_HSELer(self, ta=None, **kwwargs):

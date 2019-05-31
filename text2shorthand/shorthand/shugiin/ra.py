@@ -13,7 +13,8 @@ from pyx.metapost.path import (
 
 class CharRa(ShugiinChar):
     def __init__(self, name='ra', kana='ら',
-                 model='SER9', head_type='SER', tail_type='SER'):
+                 model='SER9', head_type='SER', tail_type='SER',
+                 flick_pos=None):
         super().__init__(name, kana, model, head_type, tail_type)
         self.tail_ligature -= {'SR', 'S', 'EL', 'ER', 'SWL'}
 
@@ -45,7 +46,16 @@ class CharRa(ShugiinChar):
 
     @classmethod
     def path_SERne(cls, ta=None, **kwargs):
-        pass
+        #M 0,173.055 C 7.1567541,174.09526 13.489981,179.21199 15.054283,188.2579
+        z0 = P(0, -0)
+        c0 = P(2.52474, -0.366981)
+        c1 = P(4.75897, -2.17205)
+        z1 = P(5.31082, -5.36325)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_SERner(cls, ta=None, **kwargs):

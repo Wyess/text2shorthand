@@ -13,7 +13,8 @@ from pyx.metapost.path import (
 
 class CharNaka(ShugiinChar):
     def __init__(self, name='naka', kana='なか',
-                 model='HEL9', head_type='HEL', tail_type='EL'):
+                 model='HEL9', head_type='HEL', tail_type='EL',
+                 flick_pos=None):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
         self.tail_ligature -= {'ER', 'NER'}
