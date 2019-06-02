@@ -47,3 +47,4 @@ from ..shugiin.har import CharHar
 from ..shugiin.mar import CharMar
 from ..shugiin.yar import CharYar
 from ..shugiin.kakar import CharKakar
+from ..shugiin.sakar import CharSakar
