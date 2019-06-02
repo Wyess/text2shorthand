@@ -18,7 +18,7 @@ class CharYa(ShugiinChar):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {'SR'}
         self.head_translation = {'SWLSEL': 'SR'}
-        self.tail_ligature -= {'SR', 'S', 'EL', 'SEL', 'SWL'}
+        #self.tail_ligature -= {'SR', 'S', 'EL', 'SEL', 'SWL'}
 
     @classmethod
     def path_NER(cls, ta=None, **kwargs):
@@ -98,7 +98,16 @@ class CharYa(ShugiinChar):
 
     @classmethod
     def path_NERsel(cls, ta=None, **kwargs):
-        pass
+        #M 92.395,361.843 C 92.17812,356.5265 98.174875,345.43427 109.462,344.194
+        z0 = P(0, -0)
+        c0 = P(-0.0765104, 1.87554)
+        c1 = P(2.03901, 5.78864)
+        z1 = P(6.02086, 6.22617)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_NERsw(cls, ta=None, **kwargs):
