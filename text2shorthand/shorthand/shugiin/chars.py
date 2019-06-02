@@ -38,3 +38,11 @@ from ..shugiin.ran import CharRan
 from ..shugiin.wan import CharWan
 from ..shugiin.sakan import CharSakan
 from ..shugiin.nakan import CharNakan
+from ..shugiin.kar import CharKar
+from ..shugiin.sar import CharSar
+from ..shugiin.tar import CharTar
+from ..shugiin.nar import CharNar
+from ..shugiin.naru import CharNaru
+from ..shugiin.har import CharHar
+from ..shugiin.mar import CharMar
+from ..shugiin.yar import CharYar
