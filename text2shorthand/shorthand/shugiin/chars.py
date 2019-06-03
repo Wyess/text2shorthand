@@ -49,3 +49,4 @@ from ..shugiin.yar import CharYar
 from ..shugiin.kakar import CharKakar
 from ..shugiin.sakar import CharSakar
 from ..shugiin.makar import CharMakar
+from ..shugiin.nakar import CharNakar
