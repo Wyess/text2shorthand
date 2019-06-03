@@ -7,13 +7,11 @@ from text2shorthand.common.char import Char
 class ShugiinChar(Char):
     def __init__(self, name='', model='', kana='',
                  head_type='', tail_type='',
-                 soundmark='', flick_pos=None):
+                 soundmark=''):
         super().__init__(name, model, kana, head_type, tail_type)
         self.soundmark = soundmark
         if self.soundmark != '':
             self.drawn_extra = False
-
-        self.flick_pos = flick_pos or P(0, 0)
 
         if self.head_type == 'SWL':
             self.head_ligature = {'E', 'EL', 'SEL', 'NER'}
@@ -39,6 +37,8 @@ class ShugiinChar(Char):
             self.tail_ligature = {'S', 'SEL'}
         elif self.tail_type == 'SWLSEL':
             self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'ER', 'SWL', 'NER', 'SER'}
+        elif self.tail_type == 'NER':
+            self.tail_ligature -= {'SR', 'S', 'EL', 'SWL'}
         elif self.tail_type == 'SER':
             pass
             #self.tail_ligature -= {'NE'}
