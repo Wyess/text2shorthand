@@ -52,3 +52,4 @@ from ..shugiin.makar import CharMakar
 from ..shugiin.nakar import CharNakar
 from ..shugiin.nagar import CharNagar
 from ..shugiin.hanar import CharHanar
+from ..shugiin.hakar import CharHakar
