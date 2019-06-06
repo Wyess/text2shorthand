@@ -17,6 +17,11 @@ class CharNagar(ShugiinChar):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
         #self.tail_ligature = {}
+
+    def set_next_head(self, flick_len=2.0, dz=P(0, 0)):
+        if self.after.name == 'wa':
+            dz = P(3, -0.5)
+        super().set_next_head(flick_len, dz)
     
     @classmethod
     def path_HNELF(self, ta=None, **kwwargs):
