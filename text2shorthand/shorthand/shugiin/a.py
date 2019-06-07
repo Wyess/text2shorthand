@@ -59,7 +59,16 @@ class CharA(ShugiinChar):
 
     @classmethod
     def path_ELne(cls, ta=None, **kwargs):
-        pass
+        #M 169.126,470.776 C 169.745,473.083 177.642,474.11927 177.642,470.776
+        z0 = P(0, -0)
+        c0 = P(0.218369, -0.813858)
+        c1 = P(3.00426, -1.17943)
+        z1 = P(3.00426, -0)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_ELner(cls, ta=None, **kwargs):
