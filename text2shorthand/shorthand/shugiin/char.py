@@ -36,7 +36,8 @@ class ShugiinChar(Char):
         elif self.tail_type == 'S':
             self.tail_ligature = {'S', 'SEL'}
         elif self.tail_type == 'SWLSEL':
-            self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'ER', 'SWL', 'NER', 'SER'}
+            self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'ER', 'SWL', 'NER',
+                                   'SER', 'SEL'}
         elif self.tail_type == 'NER':
             self.tail_ligature -= {'SR', 'S', 'EL', 'SWL'}
         elif self.tail_type == 'SER':
