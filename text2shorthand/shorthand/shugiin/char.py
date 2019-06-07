@@ -25,6 +25,8 @@ class ShugiinChar(Char):
         elif self.tail_type == 'E':
             self.tail_ligature = {'E'}
         elif self.tail_type == 'EL':
+            self.tail_translation.update(
+                dict.fromkeys(['NEL'], 'NE'))
             self.tail_ligature -= {'E', 'SR', 'S', 'EL', 'SEL', 'ER', 'NER', 'SWL'}
         elif self.tail_type == 'ER':
             self.tail_ligature -= {'EL', 'SEL', 'NER', 'SWL', 'S', 'E', 'SW'}
