@@ -16,6 +16,7 @@ class CharHa(ShugiinChar):
                  model='SEL9', head_type='SEL', tail_type='SEL'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.tail_ligature -= {'SR', 'S', 'ER', 'NER', 'SWL'}
+        self.offset_from_centerline = 4.5
 
     @classmethod
     def path_SEL(cls, ta=None, **kwargs):
