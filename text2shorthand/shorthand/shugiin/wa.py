@@ -78,7 +78,21 @@ class CharWa(ShugiinChar):
 
     @classmethod
     def path_UWLnel(cls, ta=None, **kwargs):
-        pass
+        #M 388.561,645.024 C 387.122,642.968 381.873,644.076 381.873,647.863 381.924,650.765 386.45627,653.00132 387.707,650.835
+        z0 = P(0, -0)
+        c0 = P(-0.507647, 0.725311)
+        c1 = P(-2.35938, 0.334433)
+        z1 = P(-2.35938, -1.00154)
+        c2 = P(-2.34139, -2.0253)
+        c3 = P(-0.742502, -2.81422)
+        z2 = P(-0.301272, -2.04999)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
 
     @classmethod
     def path_UWLs(cls, ta=None, **kwargs):
