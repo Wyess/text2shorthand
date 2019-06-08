@@ -150,7 +150,16 @@ class CharNo(ShugiinChar):
 
     @classmethod
     def path_NELsw(cls, ta=None, **kwargs):
-        pass
+        #M 56.692,550.729 C 59.8744,549.562 61.35753,547.73043 62.9261,544.951
+        z0 = P(0, -0)
+        c0 = P(1.12268, 0.411692)
+        c1 = P(1.6459, 1.05783)
+        z1 = P(2.19925, 2.03835)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            endknot(*z1)])
 
     @classmethod
     def path_NELswr(cls, ta=None, **kwargs):
