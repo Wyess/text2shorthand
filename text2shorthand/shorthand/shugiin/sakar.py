@@ -13,10 +13,11 @@ from pyx.metapost.path import (
 
 class CharSakar(ShugiinChar):
     def __init__(self, name='sakar', kana='さかＲ',
-                 model='HSR18F', head_type='HSR', tail_type='SR'):
+                 model='HSR18F', head_type='HSR', tail_type='SRF'):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
         #self.tail_ligature = {}
+        self.offset_from_centerline = 9
     
     @classmethod
     def path_HSRF(self, ta=None, **kwwargs):
