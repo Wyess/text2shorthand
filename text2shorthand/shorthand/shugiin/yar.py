@@ -17,6 +17,7 @@ class CharYar(ShugiinChar):
         super().__init__(name, kana, model, head_type, tail_type)
         self.head_ligature = {}
         #self.tail_ligature = {}
+        self.offset_from_centerline = -9
     
     @classmethod
     def path_NERF(self, ta=None, **kwwargs):
