@@ -44,6 +44,7 @@ def parse(in_txt='in.txt', dic_csv='', dic_merge_split_yaml='', show_start_end=F
         if res.empty:
             word = ent['発音']
             ret = []
+            #print(f"word:{type(word)} {word}")
             for i in reversed(range(1 << (len(word)-1))):
                 tmp_word = ''
                 for j in range(0, len(word)):
@@ -72,6 +73,7 @@ def parse(in_txt='in.txt', dic_csv='', dic_merge_split_yaml='', show_start_end=F
                         if m:
                             char_class = m.group(1)
                             attrs = m.group(2) or ''
+                            re.sub(r' ', attrs, ',')
                         else:
                             char_class = 'CharSpace'
                             attrs = ''
