@@ -23,6 +23,8 @@ class CharGan(ShugiinChar):
             dz = P(1.5, 1.5)
         elif self.after.model == 'SW3':
             dz = P(-0.5, 4)
+        elif self.after.head_type == 'EL':
+            dz = P(-2, 2)
         super().set_next_head(flick_len, dz)
     
     @classmethod
