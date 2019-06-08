@@ -166,7 +166,8 @@ class Char():
                           style.linejoin.round,
                           color]) 
         
-    def flick_atend(self, apath, flick_len=2.0):
+    @classmethod
+    def flick_atend(cls, apath, flick_len=2.0):
         return apath.tangent(apath.end(), length=flick_len).atend()
 
     def get_top(self):
