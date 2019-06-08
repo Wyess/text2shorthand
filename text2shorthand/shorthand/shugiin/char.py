@@ -14,7 +14,7 @@ class ShugiinChar(Char):
             self.drawn_extra = False
 
         if self.head_type == 'SWL':
-            self.head_ligature = {'E', 'EL', 'SEL', 'NER'}
+            self.head_ligature = {'E', 'EL', 'SEL', 'NER', 'NEL'}
             self.head_translation.update(
                 dict.fromkeys(['SEL', 'NER', 'SWLSEL', 'ELF', 'NERF'], 'E'))
 
