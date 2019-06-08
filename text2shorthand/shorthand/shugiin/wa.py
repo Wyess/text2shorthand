@@ -289,3 +289,81 @@ class CharWa(ShugiinChar):
     @classmethod
     def path_elUWLswl(cls, ta=None, **kwargs):
         pass
+
+    @classmethod
+    def path_nelUWL(cls, ta=None, **kwargs):
+        #M 401.728,472.704 C 400.42581,475.57317 399.16312,477.37379 399.41792,479.78311 399.74126,482.84054 403.2123,482.2712 404.9783,481.2512
+        z0 = P(0, -0)
+        c0 = P(-0.459384, -1.01218)
+        c1 = P(-0.904833, -1.6474)
+        z1 = P(-0.814945, -2.49735)
+        c2 = P(-0.700878, -3.57595)
+        c3 = P(0.523628, -3.3751)
+        z2 = P(1.14663, -3.01526)
+
+        return pyx.metapost.path.path([
+            beginknot(*z0),
+            controlcurve(c0, c1),
+            knot(*z1),
+            controlcurve(c2, c3),
+            endknot(*z2)])
+
+    @classmethod
+    def path_nelUWLe(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLer(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLne(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLner(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLnel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLs(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLsl(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLsr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLse(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLser(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLsel(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLsw(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLswr(cls, ta=None, **kwargs):
+        pass
+
+    @classmethod
+    def path_nelUWLswl(cls, ta=None, **kwargs):
+        pass
