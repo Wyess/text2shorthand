@@ -31,7 +31,7 @@ class ShugiinChar(Char):
         elif self.tail_type == 'ER':
             self.tail_ligature -= {'EL', 'SEL', 'NER', 'SWL', 'S', 'E', 'SW'}
         elif self.tail_type == 'NEL':
-            self.tail_ligature -= {'SR', 'NER', 'S'}
+            self.tail_ligature -= {'SR', 'NER', 'S', 'E', 'SWL'}
         elif self.tail_type == 'SEL':
             self.tail_ligature -= {'SR', 'S', 'ER', 'NER', 'SWL'}
             self.tail_translation = {'EL': 'E'}
