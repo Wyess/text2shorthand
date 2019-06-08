@@ -46,7 +46,7 @@ class ShugiinChar(Char):
             pass
             #self.tail_ligature -= {'NE'}
         elif self.tail_type == 'SR':
-            self.tail_ligature -= {'E', 'S', 'EL', 'SEL', 'SWL', 'ER'}
+            self.tail_ligature -= {'E', 'S', 'EL', 'SEL', 'SWL', 'ER', 'NEL'}
 
         self.barbs = {'', 'P'}
         self.head_circles = {'', 'P'}
