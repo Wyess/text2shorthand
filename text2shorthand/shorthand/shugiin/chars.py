@@ -55,3 +55,4 @@ from ..shugiin.hanar import CharHanar
 from ..shugiin.hakar import CharHakar
 from ..shugiin.kara import CharKara
 from ..shugiin.no import CharNo
+from ..shugiin.nomo import CharNomo
