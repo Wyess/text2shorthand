@@ -59,3 +59,4 @@ from ..waseda.shin import CharShin
 from ..waseda.sun import CharSun
 from ..waseda.sen import CharSen
 from ..waseda.so import CharSon
+from ..waseda.ta import CharTan
