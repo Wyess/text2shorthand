@@ -1930,7 +1930,7 @@ class CharChi(WasedaChar):
             #curve(),
             endknot(*z6)])
 
-    def get_paths(self):
+    def get_paths(self, **kwargs):
         if self.to_reverse():
             if self.tail_type.endswith('F'):
                 self.head_type = 'NE'
@@ -1958,7 +1958,20 @@ class CharChin(CharChi):
     def __init__(self, name='chin', kana='ちん',
                  model='NE8CL1NE1F|SW8CR1NE1F', head_type='NE|SW',
                  tail_type='NEF'):
-        super().__init__(name, kana, model, head_type, tail_type)
+        super().__init__(name=name, kana=kana, model=model,
+            head_type=head_type, tail_type=tail_type)
+
+    def get_paths(self, **kwargs):
+        if self.to_reverse():
+            self.head_type = 'NE'
+            self.tail_type = 'NEF'
+            self.model = 'NE8CL1NE1F'
+            return [self.path_NECLNE()]
+        else:
+            self.head_type = 'SW'
+            self.tail_type = 'NEF'
+            self.model = 'SW8CR1NE1F'
+            return [self.path_SWCRNE()]
 
 class CharChiku(CharChi):
     def __init__(self, name='chiku', kana='ちく',
