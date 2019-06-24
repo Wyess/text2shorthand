@@ -63,3 +63,4 @@ from ..waseda.ta import CharTan
 from ..waseda.chi import CharChin
 from ..waseda.tsu import CharTsun
 from ..waseda.te import CharTen
+from ..waseda.to import CharTon
