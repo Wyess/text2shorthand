@@ -61,3 +61,4 @@ from ..waseda.sen import CharSen
 from ..waseda.so import CharSon
 from ..waseda.ta import CharTan
 from ..waseda.chi import CharChin
+from ..waseda.tsu import CharTsun
