@@ -37,6 +37,10 @@ class CharNa(WasedaChar):
         return cls.path_template(ta=90)
 
     @classmethod
+    def path_ELF(cls, ta=None, **kwargs):
+        return cls.path_template()
+
+    @classmethod
     def path_EL(cls, ta=None, **kwargs):
         return cls.path_template()
 
