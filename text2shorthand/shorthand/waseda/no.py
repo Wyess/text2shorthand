@@ -69,10 +69,15 @@ class CharNo(WasedaChar):
     @classmethod
     def path_ELne(cls, ta=None, **kwargs):
         return cls.path_up()
+
+    @classmethod
+    def path_ELF(cls, ta=None, **kwargs):
+        return cls.path_template()
         
 class CharNon(CharNo):
     def __init__(self, name='non', kana='のん', model='EL16F', head_type='EL', tail_type='F'):
         super().__init__(name, kana, model, head_type, tail_type)
+        self.tail_ligature = set()
 
 class CharNoku(CharNo):
     def __init__(self, name='noku', kana='のく', model='BEL16', head_type='BEL', tail_type='EL'):
