@@ -72,3 +72,4 @@ from ..waseda.no import CharNon
 from ..waseda.ha import CharHan
 from ..waseda.hi import CharHin
 from ..waseda.hu import CharHun
+from ..waseda.he import CharHen
