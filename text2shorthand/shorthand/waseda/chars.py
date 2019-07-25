@@ -75,3 +75,4 @@ from ..waseda.hu import CharHun
 from ..waseda.he import CharHen
 from ..waseda.ho import CharHon
 from ..waseda.ma import CharMan
+from ..waseda.mi import CharMin
