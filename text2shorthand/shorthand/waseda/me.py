@@ -988,15 +988,15 @@ class CharMe(WasedaChar):
             #curve(),
             endknot(*z5)])
 
-#class CharMen(CharMe):
-#    def __init__(self, name='men', kana='めん',
-#                 model='ER16CR1NE1F', head_type='ER',
-#                 tail_type='ERCR1NE1F'):
-#        super().__init__(name, kana, model, head_type, tail_type)
-#
-#    def get_paths(self):
-#        return [self.path_ERCRNE()]
-#
+class CharMen(CharMe):
+    def __init__(self, name='men', kana='めん',
+                 model='ER16CR1NE1F', head_type='ER',
+                 tail_type='ERCR1NE1F'):
+        super().__init__(name, kana, model, head_type, tail_type)
+
+    def get_paths(self):
+        return [self.path_ERCRNE()]
+
 #class CharMeku(CharMe):
 #    def __init__(self, name='meku', kana='めく',
 #                 model='BER16CR1', head_type='BER',
