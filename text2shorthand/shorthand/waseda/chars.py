@@ -76,3 +76,4 @@ from ..waseda.he import CharHen
 from ..waseda.ho import CharHon
 from ..waseda.ma import CharMan
 from ..waseda.mi import CharMin
+from ..waseda.mu import CharMun
