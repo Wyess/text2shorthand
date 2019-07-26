@@ -78,3 +78,5 @@ from ..waseda.ma import CharMan
 from ..waseda.mi import CharMin
 from ..waseda.mu import CharMun
 from ..waseda.me import CharMen
+from ..waseda.mo import CharMon
+from ..waseda.ya import CharYan
