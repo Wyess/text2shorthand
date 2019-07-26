@@ -80,3 +80,4 @@ from ..waseda.mu import CharMun
 from ..waseda.me import CharMen
 from ..waseda.mo import CharMon
 from ..waseda.ya import CharYan
+from ..waseda.yu import CharYun
