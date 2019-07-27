@@ -84,3 +84,4 @@ from ..waseda.yu import CharYun
 from ..waseda.yo import CharYon
 from ..waseda.ra import CharRan
 from ..waseda.ri import CharRin
+from ..waseda.ru import CharRun
