@@ -88,3 +88,6 @@ from ..waseda.ru import CharRun
 from ..waseda.re import CharRen
 from ..waseda.ro import CharRon
 from ..waseda.wa import CharWan
+
+from ..waseda.aa import CharAa
+from ..waseda.ii import CharIi
