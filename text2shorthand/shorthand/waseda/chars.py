@@ -91,3 +91,4 @@ from ..waseda.wa import CharWan
 
 from ..waseda.aa import CharAa
 from ..waseda.ii import CharIi
+from ..waseda.ura import CharUu
